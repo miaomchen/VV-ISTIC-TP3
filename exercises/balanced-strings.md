@@ -26,3 +26,36 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+
+### 1. input space partitioning
+- Characteristics and blocks identified using interface based modeling:
+ 
+  | Characteristics  |  Blocks  |   |   
+  |---|---|---|
+  | str is empty  |True   |  False | 
+ 
+- Characteristics and blocks identified using functionality based modeling:
+
+  | Characteristics  |  Blocks  |   |    |   
+  |---|---|---|---|
+  |Length of str is pair   |True|False |   |   
+  |Number of open symbols in str equals number of closed symbols |  True |  False |   |   |
+  |The first character is open symbol | True|False |   |   
+  |Number of types of symbols | 0 | 1 | &gt;1 | 
+  |Each open symbol has a matching closed symbol | True|False |   |
+  |Each closed symbol has a matching open symbol | True|False |   |
+  |The substring before pairs of symbols is balanced | True|False |   |   
+  |The substring after pairs of symbols is balanced | True|False |   |   
+  |The substring between pairs of symbols is balanced | True|False |   |   
+  
+### 2. statement coverage
+J'ai créé une suite de test dans la classe "StringUtilsTest" avec les inputs définis dans l'étape 1 input space partitioning.
+Ensuite j'ai run la suite de test avec Coverage où le résultat était 88%. Donc, j'ai ajouté des nouveaux cas de test
+pour augmenter la coverage à 100%.
+
+### 3. logic coverage
+J'ai un seul prédicat qui utilise plus de 2 opétateurs booléens : if (chari == ')' || chari == ']' || chari == '}').
+Pour vérifier la "Base Choice Coverage", il faut choisir un block pour chaque partition, ici, par exemple, les blocks choisis
+peuvent être chari == ')', chari == ']' et chari == '}'. Ensuite, il faut créer un test avec ces 3 blocks. 
+En revenche, ces 3 blocks sont incompatibles, un test ne peut pas satisfier ces 3 blocks en même temps. Dans le cas où il est possible,
+il faut ensuite changer la valeur d'un seul block et garder les autres chaque fois pour tester chaque block.
