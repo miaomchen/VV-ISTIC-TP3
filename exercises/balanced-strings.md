@@ -59,3 +59,9 @@ Pour vérifier la "Base Choice Coverage", il faut choisir un block pour chaque p
 peuvent être chari == ')', chari == ']' et chari == '}'. Ensuite, il faut créer un test avec ces 3 blocks. 
 En revenche, ces 3 blocks sont incompatibles, un test ne peut pas satisfier ces 3 blocks en même temps. Dans le cas où il est possible,
 il faut ensuite changer la valeur d'un seul block et garder les autres chaque fois pour tester chaque block.
+
+### 4. PIT
+J'ai utilisé la commande mvn clean test pour utiliser PIT afin de faire le mutation testing.
+Le résultat : Le mutation score est 100%, et il n'y a pas de live mutants.
+>> Generated 25 mutations Killed 25 (100%)
+>> Ran 45 tests (1.8 tests per mutation)
