@@ -57,6 +57,44 @@ class DateTest {
         assertDoesNotThrow(()-> new Date(29, 2, 2020));
     }
 
+    // new test cases for isValidDate() after mutation testing
+    @Test
+    @DisplayName("test isValidDate 9")
+    public void testLessThan1() {
+        assertFalse(Date.isValidDate(1, 0, 2020), "Month should not be less than 1.");
+        assertFalse(Date.isValidDate(0, 1, 2020), "Day should not be less than 1.");
+    }
+
+    @Test
+    @DisplayName("test isValidDate 10")
+    public void testMaxMinYear() {
+        assertFalse(Date.isValidDate(1, 1, 10000), "Year should not be greater than 9999.");
+        assertFalse(Date.isValidDate(1, 1, 1700), "Year should not be less than 1800.");
+    }
+
+    @Test
+    @DisplayName("test isValidDate 11")
+    public void testFeb30LeapYear() {
+        assertFalse(Date.isValidDate(30, 2, 2020), "February in leap years should not have more than 29 days");
+    }
+
+    @Test
+    @DisplayName("test isValidDate 12")
+    public void testFeb27CommonYear() {
+        assertTrue(Date.isValidDate(27, 2, 2022), "February could have less than 28 days");
+    }
+
+    @Test
+    @DisplayName("test isValidDate 13")
+    public void testMonth46911Days31() {
+        assertFalse(Date.isValidDate(31, 4, 2022), "April should not have more than 30 days");
+        assertFalse(Date.isValidDate(31, 6, 2022), "June should not have more than 30 days");
+        assertFalse(Date.isValidDate(31, 9, 2022), "September should not have more than 30 days");
+        assertFalse(Date.isValidDate(31, 11, 2022), "November should not have more than 30 days");
+    }
+
+
+
     @Test
     @DisplayName("test isLeapYear 1")
     public void testIsLeapYear() {
@@ -227,6 +265,20 @@ class DateTest {
         }
     }
 
+    // new test cases for nextDate() after mutation testing
+    @Test
+    @DisplayName("test nextDate 7")
+    public void testCommonDate2() {
+        try {
+            Date date = new Date(12, 6, 2021);
+            Date nextDate = new Date(11, 6, 2021);
+            assertNotEquals(0, nextDate.compareTo(date.nextDate()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     @Test
     @DisplayName("test previousDate 1")
@@ -300,5 +352,32 @@ class DateTest {
         }
     }
 
-    
+    // new test cases after mutation testing
+    @Test
+    @DisplayName("test previousDate 7")
+    public void testMonth1NotDay1() {
+        try {
+            Date date = new Date(3, 1, 2021);
+            Date preDate = new Date(2, 1, 2021);
+            assertEquals(0, preDate.compareTo(date.previousDate()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    @DisplayName("test previousDate 7")
+    public void testpredayplus1() {
+        try {
+            Date date = new Date(20, 7, 2021);
+            Date preDate = new Date(21, 7, 2021);
+            assertNotEquals(0, preDate.compareTo(date.previousDate()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
+
+
+
