@@ -141,3 +141,26 @@ J'ai ajouté 2 nouveaux cas de test augmenter la coverage.
     }
 
 ```
+
+
+### 4. PIT
+Mutation score :
+>> Generated 78 mutations Killed 60 (77%)
+>> Ran 312 tests (4 tests per mutation)
+
+Une partie des Live mutants :
+1. if (year > MAX_VALID_YR || : changed conditional boundary → SURVIVED
+2. if (month < 1 || month > 12) { : changed conditional boundary → SURVIVED
+3. if (day < 1 || day > 31) { : changed conditional boundary → SURVIVED
+4. return (day <= 29); : replaced boolean return with true for fr/istic/vv/Date::isValidDate → SURVIVED
+5. return (day <= 28); : changed conditional boundary → SURVIVED
+6. if (month == 4 || month == 6 || month == 9 || month == 11) { : negated conditional → SURVIVED
+7. return (day <= 30); : 
+   1. replaced boolean return with true for fr/istic/vv/Date::isValidDate → SURVIVED 
+   2. changed conditional boundary → SURVIVED 
+   3. negated conditional → SURVIVED
+8. nextDay = this.day + 1; :  Replaced integer addition with subtraction → SURVIVED
+
+Suite à l'ajout des nouveaux cas test, le mutation score est augmenté à 90%.
+>> Generated 78 mutations Killed 70 (90%)
+>> Ran 318 tests (4.08 tests per mutation)
