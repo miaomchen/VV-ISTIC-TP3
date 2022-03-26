@@ -86,7 +86,7 @@ The characteristics *size of items* are common to pop(), peek(), and count().
 The characteristic of *i* is common to siftDown(int i) and siftUp(int i)
 
 ### 2. Statement coverage
-Les cas de test qui utilise un push() et puis un pop() déclenchent l'exception :
+Les cas de test qui utilisent un push() et puis un pop() déclenchent l'exception :
 java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0.
 Par conséquent, j'ai ajouté une condition if(count()==1) pour la méthode pop() et peek().
 Suite à la correction, la coverage est 83%(44/53).
