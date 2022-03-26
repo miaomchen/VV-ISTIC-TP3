@@ -15,3 +15,47 @@ Include the improved test code in this file.
 
 ## Answer
 
+*DetachedTestCase* : permet de détecter les cas de test d'une classe de test qui ne sont pas précédés par l'annotation @Test
+
+*JUnit4SuitesShouldUseSuiteAnnotation*, *JUnit4SuitesShouldUseSuiteAnnotation* , *JUnit4TestShouldUseAfterAnnotation*, *JUnit4TestShouldUseBeforeAnnotation*, *JUnit4TestShouldUseTestAnnotation*, *JUnitAssertionsShouldIncludeMessage*, *JUnitSpelling*, *JUnitStaticSuite* : permet de vérifier que les bonnes annotations et fonctions  ont été utilisées pour effectuer les tests.
+
+*JUnitTestContainsTooManyAsserts*, *JUnitTestsShouldIncludeAssert*, *UnnecessaryBooleanAssertion*, *UseAssertEqualsInsteadOfAssertTrue*, *UseAssertEqualsInsteadOfAssertTrue* , *UseAssertNullInsteadOfAssertTrue*, *UseAssertSameInsteadOfAssertTrue*, *UseAssertTrueInsteadOfAssertEquals* : présente les meilleures manières d'utiliser les Assert dans les classes de tests
+
+*JUnitUseExpectedJUnitUseExpected* : gestion des exceptions dans les cas de test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
