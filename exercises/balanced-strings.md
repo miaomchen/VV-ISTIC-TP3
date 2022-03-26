@@ -57,7 +57,7 @@ pour augmenter la coverage à 100%.
 J'ai un seul prédicat qui utilise plus de 2 opétateurs booléens : if (chari == ')' || chari == ']' || chari == '}').
 Pour vérifier la "Base Choice Coverage", il faut choisir un block pour chaque partition, ici, par exemple, les blocks choisis
 peuvent être chari == ')', chari == ']' et chari == '}'. Ensuite, il faut créer un test avec ces 3 blocks. 
-En revenche, ces 3 blocks sont incompatibles, un test ne peut pas satisfier ces 3 blocks en même temps. Dans le cas où il est possible,
+En revenche, ces 3 blocks sont incompatibles, un test ne peut pas satisfaire ces 3 blocks en même temps. Dans le cas où il est possible,
 il faut ensuite changer la valeur d'un seul block et garder les autres chaque fois pour tester chaque block.
 
 ### 4. PIT
