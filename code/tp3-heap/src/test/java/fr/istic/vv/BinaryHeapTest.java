@@ -254,13 +254,4 @@ class BinaryHeapTest {
         assertEquals(40, top5, "Element on top of the heap should be 40");
     }
 
-}package fr.istic.vv;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class BinaryHeapTest {
-
-
 }
